@@ -37,7 +37,9 @@ const MovieDetails = () => {
             Powrót
           </button>
         </Link>
-        <MovieCard movie={selectedMovie} />
+        {selectedMovie && selectedMovie.title && (
+          <MovieCard movie={selectedMovie} />
+        )}
         <Suspense
           fallback={<div className={loadingIndicator.loadingDots}></div>}
         >
