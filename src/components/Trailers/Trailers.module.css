@@ -1,0 +1,66 @@
+.wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .trailerHeader {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .trailerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .trailerItem {
+    flex: 0 0 100%; /* Każda kolumna ma szerokość 100% na urządzeniach mobilnych */
+    padding: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    /* Na urządzeniach o szerokości większej lub równej 768px */
+    .trailerItem {
+      flex: 0 0 33.333%; /* Każda kolumna ma szerokość 33.333% na tabletach */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    /* Na urządzeniach o szerokości większej lub równej 1024px */
+    .trailerItem {
+      flex: 0 0 20%; /* Każda kolumna ma szerokość 20% na urządzeniach desktop */
+    }
+  }
+  
+  .trailerButton {
+    background-color: #aac3e0;
+    color: #053a76;
+    border: 1px solid #0d57aa;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px 24px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 200px;
+    width: 100%;
+  }
+  
+  .trailerButton:hover {
+    background-color: #165195;
+    color: #ffffff;
+  }
+  
+  .noTrailersText {
+    margin: 10px auto 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 360px;
+  }

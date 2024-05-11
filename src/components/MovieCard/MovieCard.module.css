@@ -1,0 +1,79 @@
+/* MovieCard.module.css */
+
+.movieCardContainer {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .img {
+    height: 600px;
+    width: 400px;
+    border-radius: 30px;
+  }
+  
+  .movieInfo {
+    padding-top: 20px;
+    max-width: 1100px;
+  }
+  
+  .movieName {
+    margin-bottom: 20px;
+  }
+  
+  .movieInfoText:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  
+  .movieInfoTextBold {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .moreInfoWrapper {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+  }
+  
+  .moreInfoHeader {
+    font-size: 25px;
+    font-weight: 500;
+  }
+  
+  .list {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+  }
+  
+  .listItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .styledLink {
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 5px 15px;
+    border: 1px solid #0d57aa;
+    border-radius: 6px;
+    background-color: #aac3e0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: #053a76;
+  }
+  
+  .styledLink:hover,
+  .styledLink:focus {
+    background-color: #165195;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
