@@ -1,5 +1,3 @@
-// MovieDetails.jsx
-
 import { Suspense, useEffect, useState } from 'react';
 import { BsArrowLeftShort } from 'react-icons/bs';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
@@ -34,7 +32,7 @@ const MovieDetails = () => {
             <BsArrowLeftShort
               style={{ width: '25px', height: '25px', display: 'inline-block' }}
             />
-            Powrót
+            Back
           </button>
         </Link>
         {selectedMovie && selectedMovie.title && (

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { toast } from 'react-hot-toast';
+import css from './SearchMovies.module.css';
 
 const SearchMovies = ({ onSubmit }) => {
   const handleSubmit = e => {
@@ -18,13 +19,14 @@ const SearchMovies = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <input
+        className={css.input}
         name="query"
         type="text"
         placeholder="Search movies"
       />
-      <button type="submit">
+      <button className={css.button} type="submit">
         Search
       </button>
     </form>
@@ -32,7 +34,7 @@ const SearchMovies = ({ onSubmit }) => {
 };
 
 SearchMovies.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default SearchMovies;

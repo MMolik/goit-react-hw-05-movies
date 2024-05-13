@@ -1,5 +1,3 @@
-// MovieCard.jsx
-
 import { LoadingIndicator } from 'components/LoadingDots/LoadingDots';
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
@@ -47,8 +45,8 @@ const MovieCard = ({ movie }) => {
           )}
         </div>
       </div>
-      <div className={css.moreInfoWrapper}>
-        <h3 className={css.moreInfoHeader}>Additional information</h3>
+      <div className={css.moreDetailsWrapper}>
+        <h3 className={css.moreDetails}>Additional information</h3>
         <ul className={css.list}>
           <li className={css.listItem}>
             <Link

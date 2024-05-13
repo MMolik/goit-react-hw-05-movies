@@ -1,5 +1,3 @@
-// LoadingDots.jsx
-
 import React from 'react';
 import css from './LoadingDots.module.css';
 

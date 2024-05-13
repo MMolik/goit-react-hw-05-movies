@@ -1,6 +1,4 @@
-/* Cast.module.css */
-
-.wrapper {
+.mainCast {
     margin-top: 30px;
     padding-right: 80px;
     padding-left: 80px;
@@ -14,11 +12,12 @@
   }
   
   .castList {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
-    gap: 40px;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap:20px
   }
   
   .castListItem {
@@ -42,10 +41,12 @@
   .castInfo {
     margin-top: 20px;
     max-width: 220px;
+    text-align: center;
   }
   
   .castName {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    text-align: center;
   }
   
   .noCastText {

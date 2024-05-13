@@ -1,9 +1,7 @@
-// Reviews.jsx
-
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from '../../services/Api';
-import css from './Reviews.module.css';
+import css from './Reviews.module.css'; // Importuj plik stylów
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -12,8 +10,12 @@ const Reviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const { results } = await fetchMovieReviews(movieId);
-        setReviews(results);
+        const data = await fetchMovieReviews(movieId);
+        if (data && data.results) {
+          setReviews(data.results);
+        } else {
+          setReviews([]);
+        }
       } catch (error) {
         console.log(error);
       }

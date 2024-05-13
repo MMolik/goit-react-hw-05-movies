@@ -3,6 +3,7 @@ import { toast } from 'react-hot-toast';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import SearchMovies from '../components/SearchMovies/SearchMovies';
 import { fetchMovieByName } from '../services/Api';
+import css from '../components/MovieList/MovieList.module.css';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -41,12 +42,12 @@ const Movies = () => {
 
   return (
     <main>
-      <div>Movies Page</div>
+      <div></div>
       <SearchMovies onSubmit={handleSubmit} />
-      <ul>
+      <ul className={css.list}>
         {Array.isArray(movies) && movies.length > 0 ? (
           movies.map(movie => (
-            <li key={movie.id}>
+            <li className={css.listItem} key={movie.id}>
               <Link to={`/movies/${movie.id}`} state={{ from: location }}>
                 {movie.title}
               </Link>

@@ -8,17 +8,17 @@ const Trailers = () => {
   const { movieId } = useParams();
   const [trailers, setTrailers] = useState([]);
   const [selectedTrailer, setSelectedTrailer] = useState(null);
-  const [loading, setLoading] = useState(true); // Dodajemy stan do obsługi ładowania
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTrailers = async () => {
       try {
         const { results } = await fetchMovieTrailers(movieId);
         setTrailers(results);
-        setLoading(false); // Ustawiamy stan na false po pobraniu zwiastunów
+        setLoading(false);
       } catch (error) {
         console.log(error);
-        setLoading(false); // W przypadku błędu ustawiamy stan na false
+        setLoading(false);
       }
     };
 
@@ -33,7 +33,7 @@ const Trailers = () => {
     setSelectedTrailer(null);
   };
 
-  if (loading) { // Jeśli dane są ładowane, zwracamy komunikat o ładowaniu
+  if (loading) {
     return <p>Loading...</p>;
   }
 
@@ -41,7 +41,7 @@ const Trailers = () => {
     <div className={css.wrapper}>
       <h3 className={css.trailerHeader}>Trailers</h3>
       <div className={css.trailerContainer}>
-        {trailers.length ? (
+        {trailers && trailers.length ? (
           trailers.map(trailer => (
             <div key={trailer.id} className={css.trailerItem}>
               <button

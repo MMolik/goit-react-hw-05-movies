@@ -1,5 +1,3 @@
-// Cast.jsx
-
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from '../../services/Api';
@@ -10,26 +8,26 @@ const Cast = () => {
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    const fetchCast = async () => {
+    const fetchCastData = async () => {
       try {
-        const { cast } = await fetchMovieCast(movieId);
-        setCast(cast);
+        const data = await fetchMovieCast(movieId);
+        setCast(data || []); // Zapobiegamy próbie odczytu właściwości z null lub undefined
       } catch (error) {
         console.log(error);
       }
     };
 
-    fetchCast();
+    fetchCastData();
   }, [movieId]);
 
   return (
-    <div className={css.wrapper}>
+    <div className={css.mainCast}>
       <h3 className={css.castHeader}>Cast</h3>
-      {cast.length ? (
+      {cast.length > 0 ? ( // Sprawdzamy, czy cast jest zdefiniowany i ma długość większą od zera
         <ul className={css.castList}>
           {cast.map(actor => (
             <li className={css.castListItem} key={actor.id}>
-              {actor.profile_path ? (
+              {actor.profile_path ? ( // Sprawdzamy, czy profile_path jest zdefiniowany
                 <img
                   className={css.castImage}
                   src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
@@ -47,7 +45,7 @@ const Cast = () => {
                 <p>Character: {actor.character}</p>
               </div>
             </li>
-          ))}
+          ))}x
         </ul>
       ) : (
         <p className={css.noCastText}>

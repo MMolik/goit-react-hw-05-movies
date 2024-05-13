@@ -7,17 +7,13 @@
   .button {
     display: flex;
     align-items: center;
-    font-size: 14px;
-    color: #053a76;
-    border: 1px solid #0d57aa;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    background-color: #aac3e0;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px 30px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    background-color: #000000;
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    
   }
   
-  .button:hover,
-  .button:focus {
-    background-color: #165195;
-    color: #ffffff;
-  }
