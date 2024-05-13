@@ -11,7 +11,8 @@ const Movies = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const query = searchParams.get('query') ?? '';
+    const query = searchParams.get('query') || ''; // Changed ?? to || to handle empty query string
+
     if (!query) return;
 
     const getMovie = async () => {
@@ -35,6 +36,10 @@ const Movies = () => {
   }, [searchParams]);
 
   const handleSubmit = query => {
+    if (!query) {
+      toast.error('Please enter something');
+      return;
+    }
     setSearchParams({ query });
   };
 

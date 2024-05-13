@@ -1,5 +1,3 @@
-// SearchMovies.jsx
-
 import PropTypes from 'prop-types';
 import { toast } from 'react-hot-toast';
 import css from './SearchMovies.module.css';
@@ -8,7 +6,8 @@ const SearchMovies = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const query = e.target.elements.query.value;
+    const queryInput = e.target.querySelector('input[name="query"]');
+    const query = queryInput ? queryInput.value.trim() : '';
 
     if (!query) {
       toast.error('Please enter something');

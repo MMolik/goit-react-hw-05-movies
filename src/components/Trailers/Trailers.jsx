@@ -8,14 +8,17 @@ const Trailers = () => {
   const { movieId } = useParams();
   const [trailers, setTrailers] = useState([]);
   const [selectedTrailer, setSelectedTrailer] = useState(null);
+  const [loading, setLoading] = useState(true); // Dodajemy stan do obsługi ładowania
 
   useEffect(() => {
     const fetchTrailers = async () => {
       try {
         const { results } = await fetchMovieTrailers(movieId);
         setTrailers(results);
+        setLoading(false); // Ustawiamy stan na false po pobraniu zwiastunów
       } catch (error) {
         console.log(error);
+        setLoading(false); // W przypadku błędu ustawiamy stan na false
       }
     };
 
@@ -29,6 +32,10 @@ const Trailers = () => {
   const handleCloseModal = () => {
     setSelectedTrailer(null);
   };
+
+  if (loading) { // Jeśli dane są ładowane, zwracamy komunikat o ładowaniu
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className={css.wrapper}>
